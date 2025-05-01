@@ -9,8 +9,8 @@ export const initDB = async () => {
   });
 
   await db.collections({
-    businesses: { schemas: businessSchema },
-    articles: { schemas: articleSchema },
+    businesses: { schema: businessSchema },
+    articles: { schema: articleSchema },
   });
 
   return db;
