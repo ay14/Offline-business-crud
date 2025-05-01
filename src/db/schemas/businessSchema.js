@@ -4,9 +4,10 @@ export const businessSchema = {
     version: 0,
     description: 'details of a business venture',
     type: 'object',
+    primaryKey: 'id',
     properties: {
-        id: { type: 'string', primary: true },
+        id: { type: 'string' },
         name: { type: 'string' }
       },
-      required: ['id', 'name']
+      required: ['id']
 }

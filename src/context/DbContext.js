@@ -7,12 +7,20 @@ export const DbProvider = ({ children }) => {
   const [db, setDb] = useState(null);
 
   useEffect(() => {
+    let isMounted = true;
     const start = async () => {
-      const database = await initDB();
-      setDb(database);
+      if (isMounted) {
+        const database = await initDB();
+        setDb(database);
+      }
     };
 
     start();
+
+    return () => {
+      isMounted = false;
+    };
+
   }, []);
 
   return <DbContext.Provider value={db}>{children}</DbContext.Provider>;

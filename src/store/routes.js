@@ -1,13 +1,17 @@
 import { lazy } from "react";
 
 const BusinesswithArticlesForm = lazy(() =>
-  import("../components/BusinesswithArticlesForm")
+  import("../pages/BusinesswithArticlesForm")
 );
-
+const BusinessList = lazy(() => import("../pages/BusinessList"));
 const routes = [
   {
-    path: "/create-business",
+    path: "/add-business",
     element: <BusinesswithArticlesForm />,
+  },
+  {
+    path: "/",
+    element: <BusinessList />,
   },
 ];
 
