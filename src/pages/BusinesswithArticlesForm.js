@@ -36,14 +36,12 @@ const BusinesswithArticlesForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const businessId = uuidv4();
-    console.log("id---created:", businessId);
 
     try {
       await db.businesses.insert({
         id: businessId,
         name: State.businessName,
       });
-      console.log("business---created:");
 
       await Promise.all(
         State.articles.map((article) =>
@@ -57,7 +55,6 @@ const BusinesswithArticlesForm = () => {
         )
       );
 
-      console.log("business--andarticle----created:");
       alert("Submitted successfully!");
       setState({
         businessName: "",

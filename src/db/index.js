@@ -14,7 +14,6 @@ PouchDB.plugin(PouchAdapterIdb);
 
 export const initDB = async () => {
   try {
-    console.log("Initializing RxDB...");
     const isOnline = UseOnlineStatus;
 
     const db = await createRxDatabase({
